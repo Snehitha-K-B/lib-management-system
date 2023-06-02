@@ -1,5 +1,5 @@
 # lib-management-system
-Developed a library management system frontend using html, css and javascript
+Developed a library management system frontend using html, css and javascript. The live website link https://lib-management-system.vercel.app/
 
 **STEP 1:**
 1. The website represents a Library Management System website.
