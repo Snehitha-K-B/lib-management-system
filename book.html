@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      #search-input {
+        width: 200px;
+        padding: 5px;
+        margin-right: 10px;
+      }
+
+      #search-button {
+        padding: 5px 10px;
+        background-color: #808080;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      #book-list {
+        margin-top: 20px;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #book-list li {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #b6b0b0;
+        border-radius: 3px;
+        width: 100%;
+        text-align: center;
+      }
+
+      #pagination {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      #pagination button {
+        padding: 5px 10px;
+        background-color: #808080;
+        color: black;
+        border: none;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+
+      #pagination button:hover {
+        background-color: #808080;
+      }
+      @media screen and (max-width: 600px) {
+        #search-input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        #search-button {
+          display: block;
+          margin: 0 auto;
+        }
+
+        #book-list li {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="search-input" placeholder="Search books" />
+      <button id="search-button">Search</button>
+    </div>
+    <div id="book-list"></div>
+    <div id="pagination">
+      <button id="previous-button">Previous</button>
+      <button id="next-button">Next</button>
+    </div>
+    <script>
+      var books = [
+        "Applied mechanics",
+        "Engineering physics",
+        "Fundamentals of Thermodynamics",
+        "To engineer is human",
+        "Machinery's Handbook",
+        "Engineering Graphics",
+        "Datawarehousing and Data Mining",
+        "Software engineering",
+        "Operating System",
+        "Networks",
+        "Mobile Computing",
+        "Webtechnology",
+        "code complete",
+        "Basics of civil and mechanical",
+        "Refactoring",
+        "Harry potter and the Cursed Child",
+        "Two States",
+        "Hold my Hands",
+        "Love Hypothesis",
+        "Half Girlfriend",
+        "Can't Quarantine our love",
+        "It ends with us",
+        "It starts with us",
+        "Silent patient",
+        "The girl on the train",
+        "love on the brain"
+      ];
+      var currentPage = 1;
+      var booksPerPage = 10;
+      function displayBooks(page) {
+        var bookList = document.getElementById("book-list");
+        var startIndex = (page - 1) * booksPerPage;
+        var endIndex = startIndex + booksPerPage;
+        var booksToShow = books.slice(startIndex, endIndex);
+        bookList.innerHTML = "";
+        for (var i = 0; i < booksToShow.length; i++) {
+          var book = booksToShow[i];
+          var listItem = document.createElement("li");
+          listItem.textContent = book;
+          bookList.appendChild(listItem);
+        }
+      }
+      function createPagination() {
+        var totalPages = Math.ceil(books.length / booksPerPage);
+        var pagination = document.getElementById("pagination");
+        pagination.innerHTML = "";
+
+        var previousButton = document.createElement("button");
+        previousButton.textContent = "Previous";
+        previousButton.id = "previous-button";
+        previousButton.addEventListener("click", function () {
+          if (currentPage > 1) {
+            currentPage--;
+            displayBooks(currentPage);
+          }
+        });
+        pagination.appendChild(previousButton);
+        var nextButton = document.createElement("button");
+        nextButton.textContent = "Next";
+        nextButton.id = "next-button";
+        nextButton.addEventListener("click", function () {
+          if (currentPage < totalPages) {
+            currentPage++;
+            displayBooks(currentPage);
+          }
+        });
+        pagination.appendChild(nextButton);
+      }
+      function searchBooks() {
+        var searchTerm = document.getElementById("search-input").value;
+        var filteredBooks = books.filter(function (book) {
+          return book.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+        currentPage = 1;
+        books = filteredBooks;
+        displayBooks(currentPage);
+        createPagination();
+      }
+      displayBooks(currentPage);
+      createPagination();
+      var searchButton = document.getElementById("search-button");
+      searchButton.addEventListener("click", searchBooks);
+    </script>
+  </body>
+</html>

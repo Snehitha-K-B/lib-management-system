@@ -1,0 +1,296 @@
+<html>
+  <head>
+    <title>Gallery</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        position: relative;
+        margin: auto;
+      }
+      table {
+        color: white;
+        font-size: 30px;
+      }
+      .filter-section {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: wheat;
+      }
+      tr img {
+        width: 90px;
+        height: 90px;
+      }
+      @media (max-width: 600px) {
+        table {
+          font-size: 20px;
+        }
+        .filter-section {
+          font-size: 20px;
+        }
+        tr img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="filter-section">
+      <label for="title-filter">Title:</label>
+      <input type="text" id="title-filter" oninput="filterBooks()" />
+    </div>
+    <div class="filter-section">
+      <label for="author-filter">Author:</label>
+      <input type="text" id="author-filter" oninput="filterBooks()" />
+    </div>
+    <div class="filter-section">
+      <label for="subject-filter">Subject:</label>
+      <input type="text" id="subject-filter" oninput="filterBooks()" />
+    </div>
+    <div class="filter-section">
+      <label for="publish-date-filter">Publish Date:</label>
+      <input type="text" id="publish-date-filter" oninput="filterBooks()" />
+    </div>
+    <table id="book-table" border="2">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Subject</th>
+          <th>Publish Date</th>
+          <th>Book</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Applied mechanics</td>
+          <td>R.K.Rajput</td>
+          <td>Non-Fiction</td>
+          <td>2015</td>
+          <td><img src="i1.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Engineering physics</td>
+          <td>V.Rajendran</td>
+          <td>Non-Fiction</td>
+          <td>2017</td>
+          <td><img src="i2.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Fundamentals of Thermodynamics</td>
+          <td>wiley</td>
+          <td>Non-Fiction</td>
+          <td>2022</td>
+          <td><img src="i3.jpg" /></td>
+        </tr>
+        <tr>
+          <td>To engineer is human</td>
+          <td>Henry Petroski</td>
+          <td>Non-Fiction</td>
+          <td>1992</td>
+          <td><img src="i4.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Machinery's Handbook</td>
+          <td>Industrial press</td>
+          <td>Non-Fiction</td>
+          <td>2008</td>
+          <td><img src="i5.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Engineering Graphics</td>
+          <td>VP kumar, Jasbir singh</td>
+          <td>Non-Fiction</td>
+          <td>2017</td>
+          <td><img src="i6.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Dataware housing and Data Mining</td>
+          <td>Alasdair Gilchrist</td>
+          <td>Non-Fiction</td>
+          <td>2010</td>
+          <td><img src="i7.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Software engineering</td>
+          <td>Ian Sommerville</td>
+          <td>Non-Fiction</td>
+          <td>2017</td>
+          <td><img src="i8.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Opertaing System</td>
+          <td>Abraham Silberschatz</td>
+          <td>Non-Fiction</td>
+          <td>2018</td>
+          <td><img src="i9.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Networks</td>
+          <td>Andrew</td>
+          <td>Non-Fiction</td>
+          <td>2022</td>
+          <td><img src="i10.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Mobile Computing</td>
+          <td>Anwesha Mukherjee</td>
+          <td>Non-Fiction</td>
+          <td>2022</td>
+          <td><img src="i11.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Webtechnology</td>
+          <td>Black Book</td>
+          <td>Non-Fiction</td>
+          <td>2009</td>
+          <td><img src="i12.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Code Complete</td>
+          <td>steve McConnell</td>
+          <td>Non-Fiction</td>
+          <td>1993</td>
+          <td><img src="i13.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Basics of civil and mechanical</td>
+          <td>G Shanmugam</td>
+          <td>Non-Fiction</td>
+          <td>2018</td>
+          <td><img src="i14.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Refactoring</td>
+          <td>Martin Fowler</td>
+          <td>Non-Fiction</td>
+          <td>2019</td>
+          <td><img src="i15.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Harry potter and Cursed Child</td>
+          <td>JK Rowling</td>
+          <td>Fiction</td>
+          <td>2016</td>
+          <td><img src="i16.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Two States</td>
+          <td>Chetan Bhagat</td>
+          <td>Fiction</td>
+          <td>2012</td>
+          <td><img src="i17.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Hold my Hands</td>
+          <td>Durjoy Datta</td>
+          <td>Fiction</td>
+          <td>2013</td>
+          <td><img src="i18.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Love Hypothesis</td>
+          <td>Ali Hazelwood</td>
+          <td>Fiction</td>
+          <td>2021</td>
+          <td><img src="i19.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Half Girlfriend</td>
+          <td>Chetan Bhagat</td>
+          <td>Fiction</td>
+          <td>2014</td>
+          <td><img src="i20.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Can't Quarantine our love</td>
+          <td>Sudeep Nagarkar</td>
+          <td>Fiction</td>
+          <td>2021</td>
+          <td><img src="i21.jpg" /></td>
+        </tr>
+        <tr>
+          <td>It ends with us</td>
+          <td>Collen Hoover</td>
+          <td>Fiction</td>
+          <td>2016</td>
+          <td><img src="i22.jpg" /></td>
+        </tr>
+        <tr>
+          <td>It starts with us</td>
+          <td>Collen Hoover</td>
+          <td>Fiction</td>
+          <td>2022</td>
+          <td><img src="i23.jpg" /></td>
+        </tr>
+        <tr>
+          <td>Silent patient</td>
+          <td>Alex Michaelides</td>
+          <td>Fiction</td>
+          <td>2019</td>
+          <td><img src="i24.jpg" /></td>
+        </tr>
+        <tr>
+          <td>The girl on the train</td>
+          <td>Paula Hawkins</td>
+          <td>Fiction</td>
+          <td>2015</td>
+          <td><img src="i25.jpg" /></td>
+        </tr>
+        <tr>
+          <td>love on the brain</td>
+          <td>Ali Hazelwood</td>
+          <td>Fiction</td>
+          <td>2022</td>
+          <td><img src="i26.jpg" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      function filterBooks() {
+        var titleInput = document
+          .getElementById("title-filter")
+          .value.toLowerCase();
+        var authorInput = document
+          .getElementById("author-filter")
+          .value.toLowerCase();
+        var subjectInput = document
+          .getElementById("subject-filter")
+          .value.toLowerCase();
+        var publishDateInput = document
+          .getElementById("publish-date-filter")
+          .value.toLowerCase();
+        var table = document.getElementById("book-table");
+        var rows = table.getElementsByTagName("tr");
+        for (var i = 1; i < rows.length; i++) {
+          var title = rows[i]
+            .getElementsByTagName("td")[0]
+            .textContent.toLowerCase();
+          var author = rows[i]
+            .getElementsByTagName("td")[1]
+            .textContent.toLowerCase();
+          var subject = rows[i]
+            .getElementsByTagName("td")[2]
+            .textContent.toLowerCase();
+          var publishDate = rows[i]
+            .getElementsByTagName("td")[3]
+            .textContent.toLowerCase();
+
+          if (
+            title.includes(titleInput) &&
+            author.includes(authorInput) &&
+            subject.includes(subjectInput) &&
+            publishDate.includes(publishDateInput)
+          ) {
+            rows[i].style.display = "";
+          } else {
+            rows[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

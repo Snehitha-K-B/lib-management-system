@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        position: relative;
+        margin: auto;
+        color: white;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      form {
+        width: 80%;
+        margin: auto;
+        max-width: 400px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+      }
+
+      input[type="file"] {
+        margin-bottom: 16px;
+      }
+      img.avatar {
+        width: 50%;
+        border-radius: 30%;
+        display: block;
+        margin: auto;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        background-color: #808080;
+        color: white;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #808080;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="color: whitesmoke;"><b>Register</b></h2>
+    <form action="#" name="f" method="post" autocomplete="on">
+      <img src="register.jpg" alt="REGISTER" class="avatar" />
+      <label for="id1">Name:</label>
+      <input type="text" name="id1" id="id1" maxlength="20" required />
+
+      <label for="id2">ID NO:</label>
+      <input type="text" name="id2" id="id2" maxlength="20" required />
+
+      <label for="id3">Valid Email:</label>
+      <input type="email" name="id3" id="id3" maxlength="50" required />
+
+      <label for="id4">Password:</label>
+      <input type="password" name="id4" id="id4" maxlength="10" required />
+
+      <label for="id5">Confirm Password:</label>
+      <input type="password" name="id5" id="id5" maxlength="10" required />
+
+      <label for="id6">Phone Number:</label>
+      <input type="tel" name="id6" id="id6" maxlength="11" required />
+
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" name="photo" accept="image/*" />
+
+      <input
+        type="submit"
+        value="Submit"
+        onClick="alert('Registration Completed');"
+      />
+    </form>
+    <script>
+      function validatePassword() {
+        var password = document.getElementById("id4").value;
+        var confirmPassword = document.getElementById("id5").value;
+        var passwordMismatch = document.getElementById("passwordMismatch");
+
+        if (password !== confirmPassword) {
+          passwordMismatch.style.display = "block";
+          return false;
+        } else {
+          passwordMismatch.style.display = "none";
+          return true;
+        }
+      }
+      function validateForm() {
+        var validPassword = validatePassword();
+
+        if (!validPassword) {
+          return false;
+        }
+      }
+      var form = document.querySelector("form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        validateForm();
+        alert("Registration Completed");
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
